@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- insert your AIML categories here -->
+
+<category>
+	<pattern>HOLA</pattern>
+	<template>como te va</template>
+</category>
+
+
+  <category>
+    <pattern> P es *</pattern>
+    <template>
+      <think> <set name="1"><star/></set> </think>
+    </template>
+  </category>
+
+
+  <category>
+    <pattern> q es *</pattern>
+    <template>
+      <think> <set name="2"><star/></set> </think>
+    </template>
+  </category>
+
+
+  <category>
+    <pattern> ^ Resultado de conjunción ^ </pattern>
+    <template>
+      <condition name="1" value="True">
+        <condition name="2" value="True">P ^ Q = True
+      </condition>
+      <condition name="2" value="False">P ^ Q = False
+      </condition>
+      </condition>
+      <condition name="1" value="False">
+        <condition name="2" value="True">P ^ Q = False
+        </condition>
+        <condition name="2" value="False">P ^ Q = False
+        </condition>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+      <pattern> ^ Resultado de conjuncion ^ </pattern>
+      <template>
+          <srai>  ^ Resultado de conjunción ^ </srai>
+      </template>
+  </category>
+
+
+
+  <category>
+    <pattern> ^ Resultado de disyunción ^ </pattern>
+    <template>
+      <condition name="1" value="True">
+        <condition name="2" value="True">P v Q = True
+      </condition>
+      <condition name="2" value="False">P v Q = True
+      </condition>
+      </condition>
+      <condition name="1" value="False">
+        <condition name="2" value="True">P v Q = True
+        </condition>
+        <condition name="2" value="False">P v Q = False
+        </condition>
+      </condition>
+    </template>
+  </category>
+
+
+  <category>
+      <pattern> ^ Resultado de disyuncion ^ </pattern>
+      <template>
+          <srai>  ^ Resultado de disyunción ^ </srai>
+      </template>
+  </category>
+
+
+
+  <category>
+    <pattern> ^ Resultado de condicional ^ </pattern>
+    <template>
+      <condition name="1" value="True">
+        <condition name="2" value="True">P ➙ Q = True
+      </condition>
+      <condition name="2" value="False">P ➙ Q = False
+      </condition>
+      </condition>
+      <condition name="1" value="False">
+        <condition name="2" value="True">P ➙ Q = True
+        </condition>
+        <condition name="2" value="False">P ➙ Q = True
+        </condition>
+      </condition>
+    </template>
+  </category>
+  
+  
+  <category>
+    <pattern> ^ Resultado de bicondicional ^ </pattern>
+    <template>
+      <condition name="1" value="True">
+        <condition name="2" value="True">P ↔ Q = True
+      </condition>
+      <condition name="2" value="False">P ↔ Q = False
+      </condition>
+      </condition>
+      <condition name="1" value="False">
+        <condition name="2" value="True">P ↔ Q = False
+        </condition>
+        <condition name="2" value="False">P ↔ Q = True
+        </condition>
+      </condition>
+    </template>
+  </category>
+
+
+
+
+</aiml>
